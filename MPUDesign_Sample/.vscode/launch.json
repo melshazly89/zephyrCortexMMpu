@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Zazu",
+            "cwd": "${workspaceFolder}",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "external",
+            "gdbTarget": "localhost:4333",
+            "gdbPath": "/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "executable": "${config:ac6-zazu.projectPath}/Demo/build/primary/zephyr/zephyr.elf",
+            "preLaunchTask": "Run Zazu",
+            "runToEntryPoint": "main"
+        }
+    ]
+}

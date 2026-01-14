@@ -1,0 +1,48 @@
+cmake:
+  application:
+    configuration-dir: '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/Demo/Demo'
+    source-dir: '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/Demo/Demo'
+  board:
+    name: 'stm32f746g_disco'
+    path:
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/boards/st/stm32f746g_disco'
+    qualifiers: 'stm32f746xx'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/bindings'
+    files:
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts'
+    include-dirs:
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/modules/hal/stm32/dts'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/include'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/include/zephyr'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/common'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/vendor'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/rx'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/x86'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/xtensa'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/sparc'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/riscv'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/posix'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/arm64'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/arm'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts/arc'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/dts'
+  kconfig:
+    files:
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco_defconfig'
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/Demo/Demo/prj.conf'
+    user-files:
+     - '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/Demo/Demo/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/zephyr-sdk-0.17.4'
+  zephyr:
+    version: '4.2.1'
+    zephyr-base: '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace/deps/zephyr'
+version: '0.1.0'
+west:
+  command: '/home/mahmoudelshazly89/.zinstaller/.venv/bin/west build -p always --board stm32f746g_disco --build-dir /home/mahmoudelshazly89/Storage/zephyr/MPUDesign/Demo/Demo/build/primary'
+  topdir: '/home/mahmoudelshazly89/Storage/zephyr/MPUDesign/westworkspace'
+  version: '1.5.0'

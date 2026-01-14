@@ -1,0 +1,82 @@
+%compare-lengths
+%define lookup-function-name z_object_lookup
+%language=ANSI-C
+%global-table
+%struct-type
+%{
+#include <zephyr/kernel.h>
+#include <zephyr/toolchain.h>
+#include <zephyr/internal/syscall_handler.h>
+#include <string.h>
+%}
+struct k_object;
+static struct k_mutex kernel_mutexes[1] = {
+Z_MUTEX_INITIALIZER(kernel_mutexes[0])};
+static uint8_t Z_GENERIC_SECTION(.priv_stacks.noinit)  __aligned(Z_KERNEL_STACK_OBJ_ALIGN) priv_stacks[6][K_KERNEL_STACK_LEN(CONFIG_PRIVILEGED_STACK_SIZE)];
+static const struct z_stack_data stack_data[6] = {
+	{ 1024, (uint8_t *)(&priv_stacks[0]) },
+	{ 1024, (uint8_t *)(&priv_stacks[1]) },
+	{ 1024, (uint8_t *)(&priv_stacks[2]) },
+	{ 1024, (uint8_t *)(&priv_stacks[3]) },
+	{ 1024, (uint8_t *)(&priv_stacks[4]) },
+	{ 1024, (uint8_t *)(&priv_stacks[5]) }
+};
+%%
+"\x1c\x67\x00\x08", {0}, K_OBJ_DRIVER_CLOCK_CONTROL, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x3c\x67\x00\x08", {0}, K_OBJ_DRIVER_RESET, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x7c\x67\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x9c\x67\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xbc\x67\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xdc\x67\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xfc\x67\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x1c\x68\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x3c\x68\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x5c\x68\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x7c\x68\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x9c\x68\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xbc\x68\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xdc\x68\x00\x08", {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xfc\x68\x00\x08", {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x28\x08\x01\x20", {0}, K_OBJ_SYS_MUTEX, 0, { .mutex = &kernel_mutexes[0] }
+"\x4c\x09\x01\x20", {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }
+"\x60\x09\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 4 }
+"\xf8\x09\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 3 }
+"\x90\x0a\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 2 }
+"\x28\x0b\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 1 }
+"\xc0\x0b\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 0 }
+"\x78\x0c\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 6 }
+"\x10\x0d\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 5 }
+"\xa8\x0d\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 7 }
+"\x00\x20\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[0] }
+"\x00\x24\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[1] }
+"\x00\x28\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[2] }
+"\x00\x2c\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[3] }
+"\x00\x30\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[4] }
+"\x00\x34\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[5] }
+%%
+struct k_object *z_object_gperf_find(const void *obj)
+{
+    return z_object_lookup((const char *)obj, sizeof(void *));
+}
+
+void z_object_gperf_wordlist_foreach(_wordlist_cb_func_t func, void *context)
+{
+    int i;
+
+    for (i = MIN_HASH_VALUE; i <= MAX_HASH_VALUE; i++) {
+        if (wordlist[i].name != NULL) {
+            func(&wordlist[i], context);
+        }
+    }
+}
+
+#ifndef CONFIG_DYNAMIC_OBJECTS
+struct k_object *k_object_find(const void *obj)
+	ALIAS_OF(z_object_gperf_find);
+
+void k_object_wordlist_foreach(_wordlist_cb_func_t func, void *context)
+	ALIAS_OF(z_object_gperf_wordlist_foreach);
+#endif
+
+Z_GENERIC_DOT_SECTION(data)
+uint8_t _thread_idx_map[2] = { 0x0,  0xff, };
