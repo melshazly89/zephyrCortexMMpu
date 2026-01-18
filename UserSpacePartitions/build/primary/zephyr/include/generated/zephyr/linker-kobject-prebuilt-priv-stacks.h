@@ -3,6 +3,6 @@
 #endif
 
 #ifndef KOBJECT_PRIV_STACKS_SZ
-#define KOBJECT_PRIV_STACKS_SZ 2176
+#define KOBJECT_PRIV_STACKS_SZ 3264
 #endif
 

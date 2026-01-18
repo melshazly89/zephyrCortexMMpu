@@ -1,2 +1,0 @@
-# Load Sysbuild board Kconfig descriptions.
-osource "/home/mahmoudelshazly89/Storage/zephyr/westworkspace/deps/zephyr/boards/st/stm32h747i_disco/Kconfig.sysbuild"

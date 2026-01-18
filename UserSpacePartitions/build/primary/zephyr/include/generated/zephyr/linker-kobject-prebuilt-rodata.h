@@ -3,6 +3,6 @@
 #endif
 
 #ifndef KOBJECT_RODATA_SZ
-#define KOBJECT_RODATA_SZ 544
+#define KOBJECT_RODATA_SZ 552
 #endif
 

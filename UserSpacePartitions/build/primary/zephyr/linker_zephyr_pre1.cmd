@@ -277,7 +277,7 @@ ztest :
  *(.gnu.linkonce.r.*)
  . = ALIGN(4);
  _kobject_rodata_area_start = .;
- . = . + 544;
+ . = . + 552;
  _kobject_rodata_area_end = .;
  . = ALIGN(4);
  } > FLASH
@@ -386,7 +386,7 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
  kobject_data : ALIGN_WITH_INPUT
  {
  . = ALIGN(4);
- . = . + 788;
+ . = . + 764;
         } > RAM AT > FLASH
     __data_region_end = .;
 
@@ -490,7 +490,7 @@ noinit (NOLOAD) :
  {
  z_priv_stacks_ram_start = .;
  . = ALIGN(64);
- . = . + 2176;
+ . = . + 3264;
  z_priv_stacks_ram_end = .;
  } > RAM AT > FLASH
     __kernel_ram_end = 0x20010000 + (256 * 1K);

@@ -280,10 +280,10 @@ ztest :
  *(".kobject_data.rodata*")
  _kobject_rodata_area_end = .;
  _kobject_rodata_area_used = _kobject_rodata_area_end - _kobject_rodata_area_start;
- ASSERT(_kobject_rodata_area_used <= 544,
+ ASSERT(_kobject_rodata_area_used <= 552,
 "scripts/build/gen_kobject_placeholders.py did not reserve enough space for kobject rodata."
  );
- . = MAX(., _kobject_rodata_area_start + 544);
+ . = MAX(., _kobject_rodata_area_start + 552);
  . = ALIGN(4);
  } > FLASH
  /DISCARD/ : { *(.eh_frame) }
@@ -396,10 +396,10 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
  *(".kobject_data.sdata*")
  _kobject_data_area_end = .;
  _kobject_data_area_used = _kobject_data_area_end - _kobject_data_area_start;
- ASSERT(_kobject_data_area_used <= 788,
+ ASSERT(_kobject_data_area_used <= 764,
 "scripts/build/gen_kobject_placeholders.py did not reserve enough space for kobject data."
  );
- . = MAX(., _kobject_data_area_start + 788);
+ . = MAX(., _kobject_data_area_start + 764);
         } > RAM AT > FLASH
     __data_region_end = .;
 
@@ -506,10 +506,10 @@ noinit (NOLOAD) :
  *(".priv_stacks.noinit")
  z_priv_stacks_ram_end = .;
  z_priv_stacks_ram_used = z_priv_stacks_ram_end - z_priv_stacks_ram_start;
- ASSERT(z_priv_stacks_ram_used <= 2176,
+ ASSERT(z_priv_stacks_ram_used <= 3264,
 "scripts/build/gen_kobject_placeholders.py did not reserve enough space for privileged stacks."
  );
- . = MAX(., z_priv_stacks_ram_start + 2176);
+ . = MAX(., z_priv_stacks_ram_start + 3264);
  } > RAM AT > FLASH
     __kernel_ram_end = 0x20010000 + (256 * 1K);
     __kernel_ram_size = __kernel_ram_end - __kernel_ram_start;

@@ -12,40 +12,43 @@
 struct k_object;
 static struct k_mutex kernel_mutexes[1] = {
 Z_MUTEX_INITIALIZER(kernel_mutexes[0])};
-static uint8_t Z_GENERIC_SECTION(.priv_stacks.noinit)  __aligned(Z_KERNEL_STACK_OBJ_ALIGN) priv_stacks[2][K_KERNEL_STACK_LEN(CONFIG_PRIVILEGED_STACK_SIZE)];
-static const struct z_stack_data stack_data[2] = {
+static uint8_t Z_GENERIC_SECTION(.priv_stacks.noinit)  __aligned(Z_KERNEL_STACK_OBJ_ALIGN) priv_stacks[3][K_KERNEL_STACK_LEN(CONFIG_PRIVILEGED_STACK_SIZE)];
+static const struct z_stack_data stack_data[3] = {
 	{ 2048, (uint8_t *)(&priv_stacks[0]) },
-	{ 1024, (uint8_t *)(&priv_stacks[1]) }
+	{ 1024, (uint8_t *)(&priv_stacks[1]) },
+	{ 1024, (uint8_t *)(&priv_stacks[2]) }
 };
 %%
-"\x98\xba\x00\x08", {0}, K_OBJ_DRIVER_CLOCK_CONTROL, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\xb8\xba\x00\x08", {0}, K_OBJ_DRIVER_RESET, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\xf8\xba\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\x18\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\x38\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\x58\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\x78\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\x98\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\xb8\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x78\xbb\x00\x08", {0}, K_OBJ_DRIVER_CLOCK_CONTROL, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x98\xbb\x00\x08", {0}, K_OBJ_DRIVER_RESET, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
 "\xd8\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
 "\xf8\xbb\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
 "\x18\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
 "\x38\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\x58\xbc\x00\x08", {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
-"\x78\xbc\x00\x08", {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x58\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x78\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x98\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xb8\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xd8\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\xf8\xbc\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x18\xbd\x00\x08", {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x38\xbd\x00\x08", {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
+"\x58\xbd\x00\x08", {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }
 "\x28\x08\x01\x20", {0}, K_OBJ_SYS_MUTEX, 0, { .mutex = &kernel_mutexes[0] }
-"\xf8\x08\x01\x20", {0}, K_OBJ_SEM, 0, { .unused = 0 }
-"\x0c\x09\x01\x20", {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }
-"\x20\x09\x01\x20", {0}, K_OBJ_SEM, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }
-"\x00\x0d\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 0 }
-"\xb8\x0d\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 1 }
-"\x68\x12\x01\x20", {0}, K_OBJ_TIMER, 0, { .unused = 0 }
-"\xb0\x12\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 3 }
-"\x58\x13\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 2 }
-"\x38\x14\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 4 }
-"\x8c\x15\x01\x20", {0}, K_OBJ_SEM, 0, { .unused = 0 }
+"\x0c\x09\x01\x20", {0}, K_OBJ_SEM, 0, { .unused = 0 }
+"\x20\x09\x01\x20", {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }
+"\x34\x09\x01\x20", {0}, K_OBJ_SEM, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }
+"\x80\x0d\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 1 }
+"\x28\x0e\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 0 }
+"\xe0\x0e\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 2 }
+"\x90\x13\x01\x20", {0}, K_OBJ_TIMER, 0, { .unused = 0 }
+"\xd8\x13\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 4 }
+"\x80\x14\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 3 }
+"\x60\x15\x01\x20", {0}, K_OBJ_THREAD, 0, { .thread_id = 5 }
+"\x24\x17\x01\x20", {0}, K_OBJ_SEM, 0, { .unused = 0 }
 "\x00\x30\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[0] }
 "\x00\x38\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[1] }
+"\x00\x3c\x01\x20", {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[2] }
 %%
 struct k_object *z_object_gperf_find(const void *obj)
 {
@@ -72,4 +75,4 @@ void k_object_wordlist_foreach(_wordlist_cb_func_t func, void *context)
 #endif
 
 Z_GENERIC_DOT_SECTION(data)
-uint8_t _thread_idx_map[2] = { 0xe0,  0xff, };
+uint8_t _thread_idx_map[2] = { 0xc0,  0xff, };

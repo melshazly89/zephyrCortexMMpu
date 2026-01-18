@@ -1737,16 +1737,6 @@
 			disk-name = "SD";                                                                                              /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:178 */
 		};
 
-		/* node '/soc/memory@40024000' defined in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:849 */
-		backup_sram: memory@40024000 {
-			compatible = "zephyr,memory-region",
-			             "st,stm32-backup-sram";  /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:850 */
-			reg = < 0x40024000 0x1000 >;          /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:851 */
-			clocks = < &rcc 0x30 0x40000 >;       /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:852 */
-			zephyr,memory-region = "BACKUP_SRAM"; /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:853 */
-			status = "disabled";                  /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:854 */
-		};
-
 		/* node '/soc/spi@a0001000' defined in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:857 */
 		quadspi: spi@a0001000 {
 			compatible = "st,stm32-qspi";                                                                   /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:858 */
@@ -1940,15 +1930,6 @@
 				reg = < 0xe000ed90 0x40 >;     /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:43 */
 			};
 		};
-	};
-
-	/* node '/memory-placeholder@90000000' defined in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:48 */
-	quadspi_memory: memory-placeholder@90000000 {
-		compatible = "zephyr,memory-region",
-		             "mmio-sram";                  /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:49 */
-		reg = < 0x90000000 0x10000000 >;           /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:50 */
-		zephyr,memory-region = "QSPI_PLACEHOLDER"; /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:51 */
-		zephyr,memory-attr = < 0x2000000 >;        /* in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:52 */
 	};
 
 	/* node '/clocks' defined in deps/zephyr/dts/arm/st/f7/stm32f7.dtsi:55 */
@@ -2181,13 +2162,5 @@
 		zephyr,memory-region = "SDRAM1";     /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:58 */
 		zephyr,memory-attr = < 0x100000 >;   /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:59 */
 		phandle = < 0x71 >;                  /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:291 */
-	};
-
-	/* node '/memory@90000000' defined in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:63 */
-	ext_memory: memory@90000000 {
-		compatible = "zephyr,memory-region"; /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:64 */
-		reg = < 0x90000000 0x1000000 >;      /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:65 */
-		zephyr,memory-region = "EXTMEM";     /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:66 */
-		zephyr,memory-attr = < 0x1000000 >;  /* in deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts:68 */
 	};
 };

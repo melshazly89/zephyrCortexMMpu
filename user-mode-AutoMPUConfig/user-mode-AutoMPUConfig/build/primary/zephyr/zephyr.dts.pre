@@ -160,14 +160,7 @@
    };
   };
  };
-
- quadspi_memory: memory-placeholder@90000000 {
-  compatible = "zephyr,memory-region", "mmio-sram";
-  reg = <0x90000000 (((256) * 1024) * 1024)>;
-  zephyr,memory-region = "QSPI_PLACEHOLDER";
-  zephyr,memory-attr = <( (((1UL << (5))) << (20)) )>;
- };
-
+# 55 "/home/mahmoudelshazly89/Storage/zephyr/westworkspace/deps/zephyr/dts/arm/st/f7/stm32f7.dtsi" 3 4
  clocks {
   clk_hse: clk-hse {
    #clock-cells = <0>;
@@ -961,15 +954,7 @@
    interrupts = <49 0>;
    status = "disabled";
   };
-
-  backup_sram: memory@40024000 {
-   compatible = "zephyr,memory-region", "st,stm32-backup-sram";
-   reg = <0x40024000 ((4) * 1024)>;
-   clocks = <&rcc (0x030) (1 << 18U)>;
-   zephyr,memory-region = "BACKUP_SRAM";
-   status = "disabled";
-  };
-
+# 857 "/home/mahmoudelshazly89/Storage/zephyr/westworkspace/deps/zephyr/dts/arm/st/f7/stm32f7.dtsi" 3 4
   quadspi: spi@a0001000 {
    compatible = "st,stm32-qspi";
    #address-cells = <1>;
@@ -5286,16 +5271,7 @@ arduino_serial: &usart6 {};
   zephyr,memory-region = "SDRAM1";
   zephyr,memory-attr = <( (((1UL << (0))) << (20)) )>;
  };
-
-
- ext_memory: memory@90000000 {
-  compatible = "zephyr,memory-region";
-  reg = <0x90000000 (((16) * 1024) * 1024)>;
-  zephyr,memory-region = "EXTMEM";
-
-  zephyr,memory-attr = <( (((1UL << (4))) << (20)) )>;
- };
-
+# 71 "/home/mahmoudelshazly89/Storage/zephyr/westworkspace/deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts"
  aliases {
   led0 = &green_led_1;
   sw0 = &user_button;

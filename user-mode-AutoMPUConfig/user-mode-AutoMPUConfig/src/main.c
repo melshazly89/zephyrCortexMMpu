@@ -1,7 +1,9 @@
 #include <zephyr/kernel.h>
 #include <zephyr/app_memory/app_memdomain.h>
 #include <zephyr/sys/libc-hooks.h>
-
+#include <zephyr/sys/printk.h>
+/*Simulate Fault Injection*/
+#define INJECT_MPU_FAULTS_1 1
 /* Memory partitions definitions */
 K_APPMEM_PARTITION_DEFINE(partition1);
 K_APPMEM_PARTITION_DEFINE(partition2);
@@ -18,21 +20,24 @@ K_APP_DMEM(partition_shared) int var_shared = 99;
 
 /* Thread functions for application A */
 void app_a_threads(void *arg1, void *arg2, void *arg3) {
-    //printk("App A, Thread %d: can access var_1 = %d and var_shared = %d\n", (int) arg1, var_1, var_shared);
-    //printk("App A, Thread %d: cannot access var_2\n", (int) arg1);
+    printk("App A, Thread %d: can access var_1 = %d and var_shared = %d\n", (int) arg1, var_1, var_shared);
+    printk("App A, Thread %d: cannot access var_2\n", (int) arg1);
+    #if INJECT_MPU_FAULTS_1
+    var_2 = 100; /* This will cause an MPU fault if accessed */
+    #endif
     k_sleep(K_FOREVER);
 }
 
 /* Thread functions for application B */
 void app_b_threads(void *arg1, void *arg2, void *arg3) {
-    //printk("App B, Thread %d: can access var_2 = %d and var_shared = %d\n", (int) arg1, var_2, var_shared);
-    //printk("App B, Thread %d: cannot access var_1\n", (int) arg1);
+    printk("App B, Thread %d: can access var_2 = %d and var_shared = %d\n", (int) arg1, var_2, var_shared);
+    printk("App B, Thread %d: cannot access var_1\n", (int) arg1);
     k_sleep(K_FOREVER);
 }
 
 /* Kernel thread function */
 void kernel_thread(void *arg1, void *arg2, void *arg3) {
-    //printk("Kernel Thread: can access var_1 = %d, var_2 = %d, and var_shared = %d\n", var_1, var_2, var_shared);
+    printk("Kernel Thread: can access var_1 = %d, var_2 = %d, and var_shared = %d\n", var_1, var_2, var_shared);
     k_sleep(K_FOREVER);
 }
 

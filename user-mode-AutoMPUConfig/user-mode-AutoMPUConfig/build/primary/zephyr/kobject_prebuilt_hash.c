@@ -40,31 +40,31 @@ hash ( const char *str,  size_t len)
 {
   static unsigned short asso_values[] =
     {
-       4,  9, 12, 16,  5, 21, 43, 43, 20, 43,
-       5, 23, 20, 38, 43, 43, 25, 43, 43, 43,
-      12, 43, 43, 43, 43, 43, 43, 43, 43, 43,
-      43, 43, 24, 43, 43, 43, 43, 43, 43, 43,
-      16, 43, 43, 43, 43, 43, 43, 43, 11, 43,
-      43, 43, 10, 43, 43, 43, 25, 43, 43, 43,
-      31, 43, 43, 43, 30, 43, 43, 43, 43, 43,
+      14, 14, 15, 27, 13, 21, 43, 43, 20, 43,
+      15, 37, 20, 37, 43, 43, 22, 43, 43, 43,
       43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
-      43, 43, 43, 43,  8, 43, 43, 43, 43, 43,
+      43, 43, 21, 43, 43, 43, 11, 43, 43, 43,
+       2, 43, 43, 43, 43, 43, 43, 43,  3, 43,
+      43, 43, 21, 43, 43, 43, 13, 43, 43, 43,
+      20, 43, 43, 43, 19, 43, 43, 43,  0, 43,
       43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
-      43, 43, 43, 43, 24, 43, 43, 43, 43, 43,
-      43, 43, 43, 43, 43, 43,  6, 43, 43, 43,
-      43, 43, 43, 43, 23, 43, 43, 43, 26, 43,
-      43, 43, 43, 43, 43, 43, 20, 43, 43, 43,
-      43, 43, 43, 43, 19, 43, 43, 43, 27, 43,
       43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
-      43, 43, 43, 43, 17, 43, 43, 43, 43, 43,
       43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
-       4, 43, 43, 43, 16, 43, 43, 43, 43, 43,
-      43, 43, 43, 43, 43,  1,  0,  1, 43, 43,
-      43, 43, 43, 43, 15, 43, 43, 43, 17, 43,
-      43, 43,  2, 43, 43, 43,  7, 43, 43, 43,
-      43, 43, 43, 43,  9, 43, 43, 43, 43, 43,
+       9, 43, 43, 43, 18, 43, 43, 43, 43, 43,
       43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
-       8, 43, 43, 43,  0, 43, 43, 43, 43, 43,
+      43, 43, 43, 43, 17, 43, 43, 43, 15, 43,
+      43, 43,  7, 43, 43, 43, 20, 43, 43, 43,
+      43, 43, 43, 43, 12, 43, 43, 43, 43, 43,
+      43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
+      43, 43, 43, 43,  5, 43, 43, 43, 43, 43,
+      43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
+      43, 43, 43, 43, 11, 43, 43, 43, 43, 43,
+      43, 43, 43, 43, 43, 43,  1,  0, 43, 43,
+      43, 43, 43, 43, 10, 43, 43, 43, 10, 43,
+      43, 43, 43, 43, 43, 43,  7, 43, 43, 43,
+      43, 43, 43, 43,  7, 43, 43, 43,  3, 43,
+      43, 43, 43, 43, 43, 43, 43, 43, 43, 43,
+       6, 43, 43, 43, 43, 43, 43, 43, 43, 43,
       43, 43, 43, 43, 43, 43
     };
   return asso_values[(unsigned char)str[1]] + asso_values[(unsigned char)str[0]];
@@ -80,68 +80,66 @@ static unsigned char __unused lengthtable[] =
 
 static struct k_object wordlist[] =
   {
-#line 35 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c4f4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 27 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c3f4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 34 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c4d4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 26 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c3d4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 33 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c4b4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 25 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c3b4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 31 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c474, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 24 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c374, {0}, K_OBJ_DRIVER_RESET, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 30 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c454, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 23 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c354, {0}, K_OBJ_DRIVER_CLOCK_CONTROL, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 29 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c434, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 37 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c534, {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 28 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c414, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 32 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c544, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
 #line 36 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c514, {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
-#line 62 "kobject_prebuilt_hash.gperf"
-    {(char *)0x0000000020013400, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[2] }},
+    {(char *)0x000000000800c5c4, {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 28 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c4c4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 37 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c5e4, {0}, K_OBJ_DRIVER_UART, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 29 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c4e4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 35 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c5a4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 27 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c4a4, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 34 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c584, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 26 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c484, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 33 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c564, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 25 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c464, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 31 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c524, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 24 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c424, {0}, K_OBJ_DRIVER_RESET, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 30 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c504, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 23 "kobject_prebuilt_hash.gperf"
+    {(char *)0x000000000800c404, {0}, K_OBJ_DRIVER_CLOCK_CONTROL, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
+#line 52 "kobject_prebuilt_hash.gperf"
+    {(char *)0x0000000020010428, {0}, K_OBJ_THREAD, 0, { .thread_id = 1 }},
+#line 60 "kobject_prebuilt_hash.gperf"
+    {(char *)0x0000000020012800, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[0] }},
 #line 61 "kobject_prebuilt_hash.gperf"
     {(char *)0x0000000020013000, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[1] }},
-#line 46 "kobject_prebuilt_hash.gperf"
-    {(char *)0x0000000020010200, {0}, K_OBJ_SEM, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
+#line 49 "kobject_prebuilt_hash.gperf"
+    {(char *)0x0000000020010230, {0}, K_OBJ_THREAD, 0, { .thread_id = 4 }},
+#line 41 "kobject_prebuilt_hash.gperf"
+    {(char *)0x00000000200101a4, {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
 #line 45 "kobject_prebuilt_hash.gperf"
     {(char *)0x00000000200101f0, {0}, K_OBJ_SEM, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
 #line 44 "kobject_prebuilt_hash.gperf"
     {(char *)0x00000000200101e0, {0}, K_OBJ_SEM, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
 #line 50 "kobject_prebuilt_hash.gperf"
     {(char *)0x00000000200102d8, {0}, K_OBJ_THREAD, 0, { .thread_id = 3 }},
-#line 60 "kobject_prebuilt_hash.gperf"
-    {(char *)0x0000000020012800, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[0] }},
-#line 52 "kobject_prebuilt_hash.gperf"
-    {(char *)0x0000000020010428, {0}, K_OBJ_THREAD, 0, { .thread_id = 1 }},
 #line 53 "kobject_prebuilt_hash.gperf"
     {(char *)0x00000000200104d0, {0}, K_OBJ_THREAD, 0, { .thread_id = 0 }},
-#line 49 "kobject_prebuilt_hash.gperf"
-    {(char *)0x0000000020010230, {0}, K_OBJ_THREAD, 0, { .thread_id = 4 }},
 #line 43 "kobject_prebuilt_hash.gperf"
     {(char *)0x00000000200101cc, {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
 #line 42 "kobject_prebuilt_hash.gperf"
     {(char *)0x00000000200101b8, {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
-#line 41 "kobject_prebuilt_hash.gperf"
-    {(char *)0x00000000200101a4, {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
-#line 32 "kobject_prebuilt_hash.gperf"
-    {(char *)0x000000000800c494, {0}, K_OBJ_DRIVER_GPIO, 0 | K_OBJ_FLAG_DRIVER, { .unused = 0 }},
 #line 40 "kobject_prebuilt_hash.gperf"
     {(char *)0x0000000020010190, {0}, K_OBJ_MUTEX, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
 #line 63 "kobject_prebuilt_hash.gperf"
     {(char *)0x0000000020013800, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[3] }},
 #line 55 "kobject_prebuilt_hash.gperf"
     {(char *)0x0000000020010a38, {0}, K_OBJ_TIMER, 0, { .unused = 0 }},
+#line 46 "kobject_prebuilt_hash.gperf"
+    {(char *)0x0000000020010200, {0}, K_OBJ_SEM, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
 #line 56 "kobject_prebuilt_hash.gperf"
     {(char *)0x0000000020010a80, {0}, K_OBJ_THREAD, 0, { .thread_id = 7 }},
 #line 39 "kobject_prebuilt_hash.gperf"
@@ -152,6 +150,8 @@ static struct k_object wordlist[] =
     {(char *)0x0000000020014000, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[5] }},
 #line 64 "kobject_prebuilt_hash.gperf"
     {(char *)0x0000000020013c00, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[4] }},
+#line 62 "kobject_prebuilt_hash.gperf"
+    {(char *)0x0000000020013400, {0}, K_OBJ_THREAD_STACK_ELEMENT, 0, { .stack_data = &stack_data[2] }},
 #line 48 "kobject_prebuilt_hash.gperf"
     {(char *)0x0000000020010220, {0}, K_OBJ_SEM, 0 | K_OBJ_FLAG_INITIALIZED, { .unused = 0 }},
 #line 47 "kobject_prebuilt_hash.gperf"

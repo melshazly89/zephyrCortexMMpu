@@ -8,7 +8,7 @@
     "zephyr-workbench.build.configurations": [
         {
             "name": "primary",
-            "board": "stm32h747i_disco/stm32h747xx/m4",
+            "board": "stm32f746g_disco",
             "active": "true"
         }
     ],

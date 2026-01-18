@@ -1,1 +1,0 @@
-"mcuboot":"/home/mahmoudelshazly89/Storage/zephyr/westworkspace/deps/bootloader/mcuboot":"/home/mahmoudelshazly89/Storage/zephyr/westworkspace/deps/bootloader/mcuboot/boot/zephyr/sysbuild"
