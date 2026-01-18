@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Zazu",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "Run Zazu",
+            "miDebuggerServerAddress": "localhost:4333",
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": true,
+            "miDebuggerPath": "/home/mahmoudelshazly89/Storage/zephyr/zephyr-sdk-0.17.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "program": "${config:ac6-zazu.projectPath}/build/primary/zephyr/zephyr.elf",
+            "svdPath": "${config:ac6-zazu.installDir}/templates/ZTraining_F7_DISCO/platform/ZTraining_F7_DISCO.svd"
+        }
+    ]
+}

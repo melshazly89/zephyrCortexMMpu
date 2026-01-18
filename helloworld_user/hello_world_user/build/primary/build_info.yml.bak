@@ -1,0 +1,5 @@
+west:
+  command: /home/mahmoudelshazly89/.zinstaller/.venv/bin/west build -p always --board
+    stm32f746g_disco --build-dir /home/mahmoudelshazly89/Storage/zephyr/Repositories/helloworld_user/hello_world_user/build/primary
+  topdir: /home/mahmoudelshazly89/Storage/zephyr/westworkspace
+  version: 1.5.0
