@@ -5271,16 +5271,7 @@ arduino_serial: &usart6 {};
   zephyr,memory-region = "SDRAM1";
   zephyr,memory-attr = <( (((1UL << (0))) << (20)) )>;
  };
-
-
- ext_memory: memory@90000000 {
-  compatible = "zephyr,memory-region";
-  reg = <0x90000000 (((16) * 1024) * 1024)>;
-  zephyr,memory-region = "EXTMEM";
-
-  zephyr,memory-attr = <( (((1UL << (4))) << (20)) )>;
- };
-
+# 71 "/home/mahmoudelshazly89/Storage/zephyr/westworkspace/deps/zephyr/boards/st/stm32f746g_disco/stm32f746g_disco.dts"
  aliases {
   led0 = &green_led_1;
   sw0 = &user_button;

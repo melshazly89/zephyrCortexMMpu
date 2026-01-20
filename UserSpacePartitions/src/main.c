@@ -4,7 +4,7 @@
 #include <zephyr/sys/printk.h>
 
 /*Simulate MPU Faults*/
-//#define INJECT_MPU_FAULTS_A 1
+#define INJECT_MPU_FAULTS_A 1
 /* Memory domains for AppA and AppB */
 struct k_mem_domain AppA;
 struct k_mem_domain AppB;
